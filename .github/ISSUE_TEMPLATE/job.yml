@@ -112,7 +112,7 @@ body:
     id: expiry_date
     attributes:
       label: Expiry date
-      description: Required format: YYYY-MM-DD (UTC).
+      description: "Required format: YYYY-MM-DD (UTC)."
       placeholder: "2025-12-31"
     validations:
       required: true
