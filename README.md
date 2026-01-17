@@ -29,5 +29,12 @@ This repository collects job postings via GitHub Issue Forms and publishes a val
 - Published to GitHub Pages at `https://<org>.github.io/<repo>/jobs.json` once Pages is enabled.
 - Schema lives at `schema/jobs.schema.json`.
 
+## Refresh webhook
+If the main site needs a refresh signal when the feed updates, set repository secrets:
+- `JOBS_REFRESH_URL` - POST endpoint to notify.
+- `JOBS_REFRESH_SECRET` - Sent as `X-Refresh-Secret` header.
+
+If either secret is missing, the refresh call is skipped.
+
 ## Caching guidance
 GitHub Pages sets standard cache headers. If you need aggressive cache control, place Pages behind a CDN or append a cache-busting query string when fetching the feed.

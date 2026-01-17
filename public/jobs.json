@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "createdAt": "2026-01-17T11:37:56.000Z",
+    "updatedAt": "2026-01-17T11:52:39.000Z",
+    "title": "Blazor Frontend Dev",
+    "company": "Contoso",
+    "location": "London, GB",
+    "remote": true,
+    "employmentType": "Contract",
+    "seniority": "Senior",
+    "tags": [
+      "Blazor",
+      ".NET"
+    ],
+    "applyUrl": "https://blazorise.com/contact",
+    "description": "This is test job description",
+    "salaryRange": null,
+    "expiryDate": "2026-03-30"
+  }
+]

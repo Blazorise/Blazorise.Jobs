@@ -55,3 +55,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify jobs refresh endpoint
+        if: ${{ success() && env.JOBS_REFRESH_URL != '' && env.JOBS_REFRESH_SECRET != '' }}
+        env:
+          JOBS_REFRESH_URL: ${{ secrets.JOBS_REFRESH_URL }}
+          JOBS_REFRESH_SECRET: ${{ secrets.JOBS_REFRESH_SECRET }}
+        run: |
+          curl -sS -X POST "$JOBS_REFRESH_URL" \
+            -H "X-Refresh-Secret: $JOBS_REFRESH_SECRET" \
+            -d '{}' || echo "Webhook failed (non-fatal)"
