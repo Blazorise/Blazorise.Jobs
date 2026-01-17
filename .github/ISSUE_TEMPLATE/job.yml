@@ -37,8 +37,8 @@ body:
     attributes:
       label: Remote
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
     validations:
       required: true
   - type: dropdown
