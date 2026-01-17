@@ -1,0 +1,125 @@
+name: Job posting
+description: Submit a job posting for the Blazorise jobs board (moderated).
+title: "[JOB] "
+labels:
+  - type:job
+  - status:pending
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a job! Jobs are moderated; only approved posts appear in the feed. Spam will be removed.
+  - type: input
+    id: company_name
+    attributes:
+      label: Company name
+      description: Legal or common company name.
+      placeholder: "Contoso"
+    validations:
+      required: true
+  - type: input
+    id: role_title
+    attributes:
+      label: Role title
+      placeholder: "Senior .NET Developer"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: City, region, or "Worldwide".
+      placeholder: "Berlin, DE"
+    validations:
+      required: true
+  - type: dropdown
+    id: remote
+    attributes:
+      label: Remote
+      options:
+        - Yes
+        - No
+    validations:
+      required: true
+  - type: dropdown
+    id: employment_type
+    attributes:
+      label: Employment type
+      options:
+        - Full-time
+        - Part-time
+        - Contract
+        - Internship
+        - Temporary
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: seniority
+    attributes:
+      label: Seniority
+      options:
+        - Intern
+        - Junior
+        - Mid
+        - Senior
+        - Lead
+        - Principal
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags/keywords
+      description: Comma-separated (e.g. C#, Blazor, Azure).
+      placeholder: "C#, Blazor, Azure"
+    validations:
+      required: true
+  - type: input
+    id: apply_url
+    attributes:
+      label: Apply URL
+      description: Link to the application page.
+      placeholder: "https://example.com/jobs/123"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Markdown is supported.
+      placeholder: "Tell candidates about the role, responsibilities, and requirements."
+    validations:
+      required: true
+  - type: input
+    id: salary_range
+    attributes:
+      label: Salary range
+      description: Optional.
+      placeholder: "EUR 60k - 80k"
+    validations:
+      required: false
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email
+      description: Optional (not published).
+      placeholder: "jobs@company.com"
+    validations:
+      required: false
+  - type: input
+    id: expiry_date
+    attributes:
+      label: Expiry date
+      description: Required format: YYYY-MM-DD (UTC).
+      placeholder: "2025-12-31"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: "I confirm I have rights to post this job and it's not spam."
+          required: true

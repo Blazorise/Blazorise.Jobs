@@ -1,0 +1,12 @@
+{
+  "name": "blazorise-jobs",
+  "private": true,
+  "description": "Job board automation for Blazorise",
+  "scripts": {
+    "build:jobs": "node scripts/build-jobs.js"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  }
+}

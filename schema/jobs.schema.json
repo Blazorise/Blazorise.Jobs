@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Blazorise Jobs Feed",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "createdAt",
+      "updatedAt",
+      "title",
+      "company",
+      "location",
+      "remote",
+      "employmentType",
+      "seniority",
+      "tags",
+      "applyUrl",
+      "description",
+      "salaryRange",
+      "expiryDate"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "createdAt": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updatedAt": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "company": {
+        "type": "string",
+        "minLength": 1
+      },
+      "location": {
+        "type": "string",
+        "minLength": 1
+      },
+      "remote": {
+        "type": "boolean"
+      },
+      "employmentType": {
+        "type": "string",
+        "minLength": 1
+      },
+      "seniority": {
+        "type": "string",
+        "minLength": 1
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "applyUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      },
+      "salaryRange": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "expiryDate": {
+        "type": "string",
+        "format": "date",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      }
+    }
+  }
+}
